@@ -1,0 +1,70 @@
+<html>
+
+<head>
+    <title>CRUD System</title>
+    <meta name="description" content="Website for CRUD operation">
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="w-75 mx-auto my-4">
+
+        <div class="mb-3">
+            <label for="productName">productName :</label>
+            <input class="form-control my-2" type="text" id="productName">
+            <div id="nameAlert" class="alert alert-danger d-none">productName must be start with uppercase </div>
+        </div>
+        <div class="mb-3">
+            <label for="productPrice">productPrice :</label>
+            <input class="form-control my-2" type="number" id="productPrice">
+            <div id="priceAlert" class="alert alert-danger d-none">productPrice must be between 1000 and 8000 </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="productCategory">productCategory :</label>
+            <input class="form-control my-2" type="text" id="productCategory">
+            <div id="categoryAlert" class="alert alert-danger d-none">productCategory must be start with lowercase </div>
+
+        </div>
+
+        <div class="mb-3">
+            <label for="productDesc">productDesc :</label>
+            <textarea class="form-control my-2" type="text" id="productDesc"></textarea>
+            <div id="descAlert" class="alert alert-danger d-none">productDesc must be start with lowercase </div>
+
+        </div>
+        <button disabled onclick="addProduct()" id="subButton" class="btn btn-primary">add product</button>
+    </div>
+
+    <div class="w-75 mx-auto">
+        <label for="">Search by productName</label>
+        <input onkeyup="searchProduct(this.value)" class="form-control" type="text" name="search">
+    </div>
+
+    <div class="w-75 mx-auto my-5">
+        <table class="table">
+            <thead>
+                <th>Index</th>
+                <th>ProductName</th>
+                <th>ProductPrice</th>
+                <th>Category</th>
+                <th>Description</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </thead>
+
+            <tbody id="tableBody">
+
+            </tbody>
+        </table>
+    </div>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
